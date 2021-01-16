@@ -1,17 +1,31 @@
 ### tag-template
 
-Dirty HTML tag templating in template literals, occupies global namespace with the $_ prefix by building from a dictionary of tags and classes.
+A tag templating utility function that returns a DOM node as a string in-place from a provided template.
 
-Uses lodash-core as a stylistic preference to native methods.
+Lodash used as a stylistic preference to native.
 
 e.g.
 
 ```
-return `<span class="code-block"> This is some code! </span>`;
+return `
+  <p>
+  Some introduction text.
+  <br /> <br />
+  <span class="code-block"> This is some code! </span>
+  <span class="code-block"> <span class="def"> my_function </span>(<span class="number"> 10 </span>) </span>
+  </p>
+  `;
 ```
 
 becomes
 
 ```
-return `${$_scb} This is some code! ${$_ss}`;
+return templateTags(`
+  <p> 
+  Some introduction text.
+  <br /> <br />
+  <scb|This is some code!|ss>
+  <scb|<sdef|my_function|ss>(<snum|10|ss>)|ss>
+  </p>
+  `);
 ```
