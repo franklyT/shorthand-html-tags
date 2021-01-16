@@ -7,11 +7,11 @@ Uses lodash-core as a stylistic preference to native methods.
 e.g.
 
 ```
-<span class="code-block"> This is some code! </span>
+return `<span class="code-block"> This is some code! </span>`;
 ```
 
 becomes
 
 ```
-${$_scb} This is some code! ${$_ss}
+return `${$_scb} This is some code! ${$_ss}`;
 ```
