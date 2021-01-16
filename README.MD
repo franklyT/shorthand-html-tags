@@ -1,4 +1,4 @@
-### template-tags-functionally
+### template-tags-concept
 
 A tag templating utility function concept that translates an HTML template as a string in-place from a provided template.
 
