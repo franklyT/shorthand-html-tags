@@ -2,6 +2,8 @@
 
 Dirty HTML templating in template literals, occupies global namespace with the $_ prefix by building from a dictionary of tags and classes.
 
+Uses lodash-core for simplicity.
+
 e.g.
 
 ```
