@@ -2,7 +2,7 @@
 
 A tag templating utility function concept that returns a DOM node as a string in-place from a provided template.
 
-Lodash used as a stylistic preference to native.
+lodash-core used as a stylistic preference to native.
 
 e.g.
 
