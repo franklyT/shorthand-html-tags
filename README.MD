@@ -1,4 +1,4 @@
-### tag-template
+### template-tags-functionally
 
 A tag templating utility function that returns a DOM node as a string in-place from a provided template.
 
