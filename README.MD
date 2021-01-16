@@ -1,6 +1,6 @@
 ### template-tags-functionally
 
-A tag templating utility function concept that returns a DOM node as a string in-place from a provided template.
+A tag templating utility function concept that translates an HTML template as a string in-place from a provided template.
 
 lodash-core used as a stylistic preference to native.
 
