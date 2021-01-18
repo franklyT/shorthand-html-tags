@@ -1,6 +1,6 @@
 ### shorthand-html-tags
 
-A tag templating utility function concept that translates an HTML template as a string in-place from a provided template.
+Returns an HTML string built from a shorthand style.
 
 lodash-core used as a stylistic preference to native.
 
@@ -20,12 +20,12 @@ return `
 becomes
 
 ```
-return templateTags(`
+return shorthandTags(`
   <p> 
     Some introduction text.
     <br /> <br />
-    <scb|This is some code!|ss>
-    <scb|<sdef|my_function|ss>(<snum|10|ss>)|ss>
+    <s c|code-block> This is some code! </s>
+    <s c|code-block>|<s c|def> my_function </s>(<s c|num> 10 </s>) </s>
   </p>
   `);
 ```
