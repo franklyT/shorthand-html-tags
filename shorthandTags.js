@@ -7,6 +7,7 @@ function shorthandTags(str) {
   const MOD_TEMPLATES = {
     "c|": "class=",
     "h|": "href=",
+    "oc|": "onclick="
   };
 
   _(BLOCK_TEMPLATES).each((blockVal, blockKey) => {
