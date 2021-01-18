@@ -40,7 +40,7 @@ function shorthandTags(str: string) {
   };
 
   _(BLOCK_TEMPLATES).each((blockVal, blockKey) => {
-    if (str.indexOf(blockKey) !== -1) str = str.split(blockKey).join(`${blockVal}`);
+    if (str.indexOf(blockKey) !== -1) str = str.split(blockKey).join(blockVal);
   });
 
   _(MOD_TEMPLATES).each((modVal, modKey) => {
