@@ -18,9 +18,7 @@ function shorthandTags(str) {
   });
 
   _(MOD_TEMPLATES).each((modVal, modKey) => {
-    if (str.indexOf(modKey) === -1) return;
-
-    str = str.split(modKey).join(modVal)
+    if (str.indexOf(modKey) !== -1) str = str.split(modKey).join(modVal);
   });
 
   return str;
