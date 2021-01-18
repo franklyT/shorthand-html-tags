@@ -1,4 +1,4 @@
-### template-tags-concept
+### shorthand-html-tags
 
 A tag templating utility function concept that translates an HTML template as a string in-place from a provided template.
 
