@@ -1,29 +1,32 @@
-function templateTags(str: string) {
+function shorthandTags(str) {
   const BLOCK_TEMPLATES = {
-    s: "<span ",
-    ss: "</span>",
+    s: "span",
+    d: "div",
+    h1: "h1",
+    h2: "h2",
+    p: "p",
+    a: "a"
   };
 
-  const CLASS_TEMPLATES = {
-    call: "call",
-    cb: "code-block",
-    def: "def",
-    num: "number",
-    str: "string",
+  const MOD_TEMPLATES = {
+    "c|": "class=",
+    "h|": "href=",
   };
 
-  _.each(BLOCK_TEMPLATES, (outerVal, outerKey) => {
-    _.each(CLASS_TEMPLATES, (innerVal, innerKey) => {
-      const FULL_KEY = `${outerKey}${innerKey}`;
+  _(BLOCK_TEMPLATES).each((blockVal, blockKey) => {
+    const LEFT_KEY = `<${blockKey}`;
+    const RIGHT_KEY = `${blockKey}>`;
 
-      if (str.indexOf(FULL_KEY) === -1) return;
+    if (str.indexOf(LEFT_KEY) !== -1) str = str.split(LEFT_KEY).join(`<${blockVal}`);
+    if (str.indexOf(RIGHT_KEY) !== -1) str = str.split(RIGHT_KEY).join(`${blockVal}>`);
+  });
 
-      str = str.split(`<${FULL_KEY}|`).join(`${outerVal} class='${innerVal}'>`);
-    });
+  _(MOD_TEMPLATES).each((modVal, modKey) => {
+    const NAKED_MOD = `${modKey}`;
 
-    if (str.indexOf(outerKey) === -1) return;
+    if (str.indexOf(NAKED_MOD) === -1) return;
 
-    str = str.split(`|${outerKey}>`).join(`${outerVal}`);
+    str = str.split(NAKED_MOD).join(`${modVal}`)
   });
 
   return str;
