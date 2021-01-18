@@ -1,11 +1,7 @@
 function shorthandTags(str) {
   const BLOCK_TEMPLATES = {
     s: "span",
-    d: "div",
-    h1: "h1",
-    h2: "h2",
-    p: "p",
-    a: "a"
+    d: "div"
   };
 
   const MOD_TEMPLATES = {
