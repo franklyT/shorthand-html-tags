@@ -22,11 +22,9 @@ function shorthandTags(str) {
   });
 
   _(MOD_TEMPLATES).each((modVal, modKey) => {
-    const NAKED_MOD = `${modKey}`;
+    if (str.indexOf(modKey) === -1) return;
 
-    if (str.indexOf(NAKED_MOD) === -1) return;
-
-    str = str.split(NAKED_MOD).join(`${modVal}`)
+    str = str.split(modKey).join(modVal)
   });
 
   return str;
