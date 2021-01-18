@@ -5,9 +5,9 @@ function shorthandTags(str) {
   };
 
   const MOD_TEMPLATES = {
-    "c|": "class=",
-    "h|": "href=",
-    "oc|": "onclick="
+    "c|": "class",
+    "h|": "href",
+    "oc|": "onclick"
   };
 
   _(BLOCK_TEMPLATES).each((blockVal, blockKey) => {
@@ -19,7 +19,7 @@ function shorthandTags(str) {
   });
 
   _(MOD_TEMPLATES).each((modVal, modKey) => {
-    if (str.indexOf(modKey) !== -1) str = str.split(modKey).join(modVal);
+    if (str.indexOf(modKey) !== -1) str = str.split(modKey).join(`${modVal}=);
   });
 
   return str;
