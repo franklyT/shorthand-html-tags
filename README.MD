@@ -25,7 +25,7 @@ return shorthandTags(`
     Some introduction text.
     <br /> <br />
     <s c|code-block> This is some code! </s>
-    <s c|code-block>|<s c|def> my_function </s>(<s c|num> 10 </s>) </s>
+    <s c|code-block> <s c|def> my_function </s>(<s c|num> 10 </s>) </s>
   </p>
   `);
 ```
